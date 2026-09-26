@@ -926,7 +926,8 @@ a {
 }
 
 
-.contact-list a {
+.contact-list a,
+.contact-list > div {
 
     display: flex;
 
@@ -955,7 +956,8 @@ a {
 }
 
 
-.contact-list a > span {
+.contact-list a > span,
+.contact-list > div > span {
 
     color: var(--blue);
 
