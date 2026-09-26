@@ -1,15 +1,47 @@
-const menuToggle=document.getElementById("menuToggle");
-const navMenu=document.getElementById("navMenu");
+// Menu para dispositivos moviles
 
-menuToggle.addEventListener("click",()=>{
-  navMenu.classList.toggle("open");
-  menuToggle.setAttribute("aria-label",navMenu.classList.contains("open")?"Cerrar menú":"Abrir menú");
+const menuToggle = document.getElementById("menuToggle");
+
+const navMenu = document.getElementById("navMenu");
+
+
+menuToggle.addEventListener("click", () => {
+
+    navMenu.classList.toggle("open");
+
 });
 
-document.querySelectorAll("#navMenu a").forEach(link=>{
-  link.addEventListener("click",()=>navMenu.classList.remove("open"));
+
+// Cerrar menú al seleccionar una opción
+
+const links = document.querySelectorAll("#navMenu a");
+
+
+links.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navMenu.classList.remove("open");
+
+    });
+
 });
 
-document.querySelectorAll(".text-link").forEach(link=>{
-  link.addEventListener("click",()=>console.log("Abriendo repositorio:",link.href));
+
+// Mensaje al abrir un repositorio
+
+const projectLinks = document.querySelectorAll(".text-link");
+
+
+projectLinks.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        console.log(
+            "Abriendo repositorio:",
+            link.href
+        );
+
+    });
+
 });
